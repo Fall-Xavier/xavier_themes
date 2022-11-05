@@ -12,18 +12,43 @@ class Panel:
 		self.GetPanel()
 		
 	def GetPanel(self):
+		if self.GetEmoji() == True:
+			jumemot = len(em)
+			minus = 2 + jumemot
+			print(f"{self.GetColor(self.GetColorPanel())}╭"+"─"*int(self.GetWidht()-2)+"╮")
+			print(f"{self.GetColor(self.GetColorPanel())}│{self.GetColor(self.GetColorText())}{self.text}{self.GetColor(self.GetColorPanel())}"+" "*(self.GetWidht() - len(self.text) - minus)+"│")
+			print(f"{self.GetColor(self.GetColorPanel())}╰"+"─"*int(self.GetWidht()-2)+"╯")
+		else:
+			print(f"{self.GetColor(self.GetColorPanel())}╭"+"─"*int(self.GetWidht()-2)+"╮")
+			print(f"{self.GetColor(self.GetColorPanel())}│{self.GetColor(self.GetColorText())}{self.text}{self.GetColor(self.GetColorPanel())}"+" "*(self.GetWidht() - len(self.text) - 2)+"│")
+			print(f"{self.GetColor(self.GetColorPanel())}╰"+"─"*int(self.GetWidht()-2)+"╯")
+		
+	def GetWidht(self):
 		if self.widht == None:
 			self.widht = os.get_terminal_size().columns
+		else:
+			self.widht = self.widht
+		
+		return self.widht
+		
+	def GetColorPanel(self):
 		if self.colorpanel == None:
 			self.colorpanel = "DEFAULT"
+		else:
+			self.colorpanel = self.colorpanel
+			
+		return self.colorpanel
+		
+	def GetColorText(self):
 		if self.colortext == None:
 			self.colortext = "DEFAULT"
-		print(f"{self.GetColor(self.colorpanel)}╭"+"─"*int(self.widht-2)+"╮")
-		print(f"{self.GetColor(self.colorpanel)}│{self.GetColor(self.colortext)}{self.text}{self.GetColor(self.colorpanel)}"+" "*(self.widht - len(self.text) - 2)+"│")
-		print(f"{self.GetColor(self.colorpanel)}╰"+"─"*int(self.widht-2)+"╯")
+		else:
+			self.colortext = self.colortext
+			
+		return self.colortext
 		
 	def GetColor(self,color=None):
-		warna = {
+		coloring = {
 			"RED": "\x1b[91m",
 			"GREEN": "\x1b[92m",
 			"YELLOW": "\x1b[93m",
@@ -34,21 +59,17 @@ class Panel:
 			"BLACK": "\x1b[30m",
 			"DEFAULT": "\x1b[39m"
 			}
-		return warna.get(color)
+		return coloring.get(color)
 		
-	def GetEmoji(self,emoji=None):
+	def GetEmoji(self):
+		global em
 		emot = {}
+		emoticon = []
 		data = sorted((v, k) for k, v in Emoji.items())
-		for emoticon, kode in data:
-			emot.update({emoji:kode})
-		print(emot.get(emoji))
+		for emoji, kode in data:
+			#emot.update({emoji:kode})
+			emoticon.append(emoji)
+		em = [c for c in self.text if c in emoticon]
 		
+		return em[0] in emoticon
 		
-#if __name__=="__main__":
-	#teks = input(" masukan teks : ")
-	#ukuran = int(input(" masukan ukuran : "))
-	#Panel().GetPanel("aku sayang kamu sampai mati love you ayang mmuuah",widht=60,colortext="HIJAU")
-	
-	
-	
-	
