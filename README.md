@@ -45,3 +45,13 @@ Panel("aku sayang kamu",widht=50,colorpanel="GREEN",colortext="BLUE")
 ├── README.md
 └── tes.py                                                   
 ```
+
+## Special Thanks For
+```
+- Dapunta Khurayra
+- Angga Kurniawan
+- Latip Harkat
+- Nanta XE
+- Rizky Dev
+- ExtremeBoy
+```
