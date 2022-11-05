@@ -15,6 +15,19 @@ from xavier.panel import Panel
 Panel("aku sayang kamu",widht=50,colorpanel="GREEN",colortext="BLUE")
 ```
 
+## Valid Color List
+```
+• RED
+• GREEN
+• YELLOW
+• BLUE
+• ORANGE
+• CYAN
+• WHITE
+• BLACK
+• DEFAULT/NO_COLOR
+```
+
 ## List Directory
 ```                                               
 ├── assets                                                       
