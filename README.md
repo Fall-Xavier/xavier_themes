@@ -13,3 +13,17 @@ And maybe you can add parameters like below.
 from xavier.panel import Panel
 
 Panel("aku sayang kamu",widht=50,colorpanel="GREEN",colortext="BLUE")
+
+## List Directory                                                   
+├── assets                                                       
+│   ├── emoji.txt
+│   └── profile.jpg                                          
+├── example                                                     
+│   └── test_panel.py
+├── xavier                                            
+│   ├── __init__.py
+│   ├── emoji
+│   └── panel.py 
+├── .gitignore                                      
+├── README.md
+└── tes.py                                                   
