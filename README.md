@@ -26,7 +26,8 @@ Panel("aku sayang kamu",widht=50,colorpanel="GREEN",colortext="BLUE")
 │   ├── __init__.py
 │   ├── emoji
 │   └── panel.py 
-├── .gitignore                                      
+├── .gitignore 
+├── LICENSE                                    
 ├── README.md
 └── tes.py                                                   
 ```
