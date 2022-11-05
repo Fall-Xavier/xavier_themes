@@ -18,10 +18,11 @@ Panel("aku sayang kamu",widht=50,colorpanel="GREEN",colortext="BLUE")
 ## List Directory
 ```                                               
 ├── assets                                                       
-│   ├── emoji.txt
-│   └── profile.jpg                                          
+│   └── emoji.txt                                          
 ├── example                                                     
 │   └── test_panel.py
+├── images                                                     
+│   └── profile.jpg
 ├── xavier                                            
 │   ├── __init__.py
 │   ├── emoji
