@@ -55,3 +55,6 @@ Panel("aku sayang kamu",widht=50,colorpanel="GREEN",colortext="BLUE")
 - Rizky Dev
 - ExtremeBoy
 ```
+
+## License
+Use MIT License (MIT). Please see [License File](https://github.com/Fall-Xavier/xavier/blob/main/LICENSE) for more information license.
