@@ -9,7 +9,10 @@ class Panel:
 		self.colorpanel = colorpanel
 		self.colortext = colortext
 		self.simpan = []
-		self.GetPanel()
+		if self.widht in ["fit","FIT"]:
+			self.Fit()
+		else:
+			GetPanel()
 		
 	def GetPanel(self):
 		if self.GetEmoji() == True:
@@ -23,6 +26,17 @@ class Panel:
 			print(f"{self.GetColor(self.GetColorPanel())}│{self.GetColor(self.GetColorText())}{self.text}{self.GetColor(self.GetColorPanel())}"+" "*(self.GetWidht() - len(self.text) - 2)+"│")
 			print(f"{self.GetColor(self.GetColorPanel())}╰"+"─"*int(self.GetWidht()-2)+"╯")
 		
+	def Fit(self):
+		if self.GetEmoji() == True:
+			minus = len(em)
+			print(f"{self.GetColor(self.GetColorPanel())}╭"+"─"*(len(self.text) + minus)+"╮")
+			print(f"{self.GetColor(self.GetColorPanel())}│{self.GetColor(self.GetColorText())}{self.text}{self.GetColor(self.GetColorPanel())}"+"│")
+			print(f"{self.GetColor(self.GetColorPanel())}╰"+"─"*(len(self.text) + minus)+"╯")
+		else:
+			print(f"{self.GetColor(self.GetColorPanel())}╭"+"─"*(len(self.text))+"╮")
+			print(f"{self.GetColor(self.GetColorPanel())}│{self.GetColor(self.GetColorText())}{self.text}{self.GetColor(self.GetColorPanel())}"+"│")
+			print(f"{self.GetColor(self.GetColorPanel())}╰"+"─"*(len(self.text))+"╯")
+			
 	def GetWidht(self):
 		if self.widht == None:
 			self.widht = os.get_terminal_size().columns
@@ -57,19 +71,23 @@ class Panel:
 			"CYAN": "\x1b[96m",
 			"WHITE": "\x1b[97m",
 			"BLACK": "\x1b[30m",
-			"DEFAULT": "\x1b[39m"
+			"DEFAULT": "\x1b[39m",
+			"NO_COLOR": "\x1b[39m"
 			}
 		return coloring.get(color)
 		
 	def GetEmoji(self):
 		global em
-		emot = {}
-		emoticon = []
-		data = sorted((v, k) for k, v in Emoji.items())
-		for emoji, kode in data:
-			#emot.update({emoji:kode})
-			emoticon.append(emoji)
-		em = [c for c in self.text if c in emoticon]
-		
-		return em[0] in emoticon
+		try:
+			emot = {}
+			emoticon = []
+			data = sorted((v, k) for k, v in Emoji.items())
+			for emoji, kode in data:
+				#emot.update({emoji:kode})
+				emoticon.append(emoji)
+			em = [c for c in self.text if c in emoticon]
+			
+			return em[0] in emoticon
+		except:
+			return False
 		
