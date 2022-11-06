@@ -28,24 +28,6 @@ Panel("aku sayang kamu",widht=50,colorpanel="GREEN",colortext="BLUE")
 • DEFAULT/NO_COLOR
 ```
 
-## List Directory
-```                                               
-├── assets                                                       
-│   └── emoji.txt                                          
-├── example                                                     
-│   └── test_panel.py
-├── images                                                     
-│   └── profile.jpg
-├── xavier                                            
-│   ├── __init__.py
-│   ├── emoji
-│   └── panel.py 
-├── .gitignore 
-├── LICENSE                                    
-├── README.md
-└── tes.py                                                   
-```
-
 ## Special Thanks For
 ```
 - Dapunta Khurayra
