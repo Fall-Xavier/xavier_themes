@@ -3,20 +3,20 @@ This library is used to create panels on the terminal. Besides that, it can also
 
 ## Example
 ```python
-from xavier.panel import Panel
+from xavier_themes.panel import Panel
 
 Panel("aku sayang kamu")
 ```
 You can add parameters : widht, colorpanel, colortext
 
 ```python
-from xavier.panel import Panel
+from xavier_themes.panel import Panel
 
 Panel("aku sayang kamu",widht=50,colorpanel="GREEN",colortext="BLUE")
 ```
 You can create a panel that adjusts the size of the text by adding : widht="FIT" or widht="fit"
 ```python
-from xavier.panel import Panel
+from xavier_themes.panel import Panel
 
 Panel("aku sayang kamu",widht="FIT")
 ```
